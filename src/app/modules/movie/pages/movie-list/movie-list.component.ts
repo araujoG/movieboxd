@@ -38,8 +38,6 @@ export class MovieListComponent implements OnInit, OnDestroy {
   }
 
   handleWatchlistMovieToggle(movieId: string) :void {
-    console.log('handling ', movieId);
-
     this.watchlistService.toggleMovieInWatchlist(movieId);
   }
 

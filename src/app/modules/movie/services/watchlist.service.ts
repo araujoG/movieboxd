@@ -16,16 +16,12 @@ export class WatchlistService extends LocalStorageService {
   }
 
   toggleMovieInWatchlist(movieId: string) : void {
-    console.log('inside toggle');
-
     if(this.isMovieInWatchlist(movieId)) return this.removeMovieFromWatchlist(movieId);
 
     return this.addMovieToWatchlist(movieId);
   }
 
   private addMovieToWatchlist(movieId: string) : void {
-    console.log('inside add');
-
     let watchlist = this.getWatchlist();
 
     watchlist.push(movieId);
@@ -36,8 +32,6 @@ export class WatchlistService extends LocalStorageService {
   }
 
   private removeMovieFromWatchlist(movieId: string) : void {
-    console.log('inside remove');
-
     const watchlist = this.getWatchlist().filter(element => element != movieId);
 
     this.setItem(WATCHLIST_KEY, watchlist);

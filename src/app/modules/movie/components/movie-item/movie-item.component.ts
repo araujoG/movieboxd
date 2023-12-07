@@ -38,9 +38,7 @@ export class MovieItemComponent {
 
   toggleMovieInWatchlist(event: Event) {
     event.stopPropagation();
-    console.log('item toggle', this.movie);
 
     this.toggleInWatchlist.next(this.movie.id);
-    // TODO: add watchlist service w local storage
   }
 }
