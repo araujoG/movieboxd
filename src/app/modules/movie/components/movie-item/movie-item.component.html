@@ -15,7 +15,7 @@
   <mat-card-footer [dir]="'ltr'">
     <span class="movie-rating">{{movie.rating}}</span>
 
-    <button mat-raised-button color="primary" (click)="logga($event)">
+    <button mat-raised-button color="primary" (click)="toggleMovieInWatchlist($event)">
       <mat-icon [fontIcon]="bookmarkState()"></mat-icon>
       <span>Add to watchlist</span>
     </button>

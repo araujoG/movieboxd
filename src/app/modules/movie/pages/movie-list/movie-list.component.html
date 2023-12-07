@@ -1,3 +1,7 @@
 <div class="container">
-  <app-movie-item *ngFor="let movie of movies$ | async" [movie]="movie"></app-movie-item>
+  <app-movie-item *ngFor="let movie of movies$ | async"
+    [movie]="movie"
+    [isInWatchlist]="isMovieInWatchlist(movie.id)"
+    (toggleInWatchlist)="handleWatchlistMovieToggle($event)">
+  </app-movie-item>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Movie } from '@interfaces/movie';
 
@@ -10,7 +10,8 @@ import { Movie } from '@interfaces/movie';
 export class MovieItemComponent {
 
   @Input() movie!: Movie;
-
+  @Input() isInWatchlist = false;
+  @Output() toggleInWatchlist = new EventEmitter<string>();
 
   constructor(
     private router: Router
@@ -18,6 +19,10 @@ export class MovieItemComponent {
 
   bookmarkState(): string {
     //TODO: add bookmark_added and bookmark_remove on hover
+    if (this.isInWatchlist) {
+      return 'bookmark_added';
+    }
+
     return 'bookmark';
   }
 
@@ -31,9 +36,11 @@ export class MovieItemComponent {
     this.router.navigate(['/movies/' + movieId]);
   }
 
-  logga(event: Event) {
+  toggleMovieInWatchlist(event: Event) {
     event.stopPropagation();
+    console.log('item toggle', this.movie);
 
+    this.toggleInWatchlist.next(this.movie.id);
     // TODO: add watchlist service w local storage
   }
 }
