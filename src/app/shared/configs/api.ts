@@ -1,5 +1,6 @@
 export default (environment: { apiUrl: string }) => ({
   GET: {
-    movies: environment.apiUrl + '/movies'
+    allMovies: environment.apiUrl + '/movies',
+    movieById: environment.apiUrl + '/movies/:id',
   }
 })

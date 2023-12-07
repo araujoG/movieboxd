@@ -1,11 +1,11 @@
-<mat-card>
+<mat-card [appearance]="'raised'" (click)="moreDetails(movie.id)">
   <mat-card-header>
     <mat-card-title class="card-title">{{ movie.title }}</mat-card-title>
     <mat-card-subtitle>
       <span *ngFor="let genre of movie.genre">{{genre}}</span>
     </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="'/assets/img/'+movie.thumbnail" alt="Movie thumbnail">
+  <img mat-card-image [src]="'/assets/img/' + movie.thumbnail" [alt]="this.movieThumbnailAltText()">
   <mat-card-content>
     <p>
       {{ movie.description }}
@@ -15,7 +15,7 @@
   <mat-card-footer [dir]="'ltr'">
     <span class="movie-rating">{{movie.rating}}</span>
 
-    <button mat-raised-button color="primary">
+    <button mat-raised-button color="primary" (click)="logga($event)">
       <mat-icon [fontIcon]="bookmarkState()"></mat-icon>
       <span>Add to watchlist</span>
     </button>

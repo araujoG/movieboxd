@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <div class="toolbar-container">
+    <button [routerLink]="'/'" mat-button class="home-button">
+      <mat-icon fontIcon="archive"></mat-icon>
+      Movieboxd
+    </button>
+    <div class="toolbar-buttons">
+      <button mat-icon-button matTooltip="Login">
+        <mat-icon fontIcon="person"></mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>

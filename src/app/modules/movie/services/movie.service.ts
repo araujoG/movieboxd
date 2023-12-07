@@ -15,6 +15,10 @@ export class MovieService {
   ) { }
 
   getAllMovies(): Observable<Movie[]> {
-    return this.httpClient.get<Movie[]>(API(environment).GET.movies);
+    return this.httpClient.get<Movie[]>(API(environment).GET.allMovies);
+  }
+
+  getMovieById(id: string): Observable<Movie> {
+    return this.httpClient.get<Movie>(API(environment).GET.movieById.replace(':id', id));
   }
 }

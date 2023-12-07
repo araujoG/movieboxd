@@ -8,13 +8,14 @@ import { MovieRoutingModule } from './movie-routing.module';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 
 
 @NgModule({
   declarations: [
-    MovieComponent,
     MovieItemComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieDetailsComponent
   ],
   imports: [
     CommonModule,

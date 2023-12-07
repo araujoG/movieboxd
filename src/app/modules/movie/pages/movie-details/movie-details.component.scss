@@ -1,0 +1,20 @@
+img {
+  height: 400px;
+}
+
+:host {
+  display: flex;
+  column-gap: 25px;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  .title {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(my-primary);
+  }
+}
