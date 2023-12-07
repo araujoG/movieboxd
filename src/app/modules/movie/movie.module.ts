@@ -9,13 +9,15 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
+import { WatchlistIconNamePipe } from './pipes/watchlist-icon-name.pipe';
 
 
 @NgModule({
   declarations: [
     MovieItemComponent,
     MovieListComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    WatchlistIconNamePipe
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,7 @@ export class MovieItemComponent {
   @Input() movie!: Movie;
   @Input() isInWatchlist = false;
   @Output() toggleInWatchlist = new EventEmitter<string>();
+  isOnHover = false;
 
   constructor(
     private router: Router
@@ -40,5 +41,17 @@ export class MovieItemComponent {
     event.stopPropagation();
 
     this.toggleInWatchlist.next(this.movie.id);
+  }
+
+  log(t : string) {
+    console.log(t)
+  }
+
+  handlingButtonMouseEnter(event: any) {
+    this.isOnHover = true;
+  }
+
+  handlingButtonMouseLeave(event: any) {
+    this.isOnHover = false;
   }
 }

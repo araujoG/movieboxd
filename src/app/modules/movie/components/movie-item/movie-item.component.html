@@ -14,10 +14,12 @@
 
   <mat-card-footer [dir]="'ltr'">
     <span class="movie-rating">{{movie.rating}}</span>
-
-    <button mat-raised-button color="primary" (click)="toggleMovieInWatchlist($event)">
-      <mat-icon [fontIcon]="bookmarkState()"></mat-icon>
-      <span>Add to watchlist</span>
+    <button mat-raised-button color="primary"
+      (click)="toggleMovieInWatchlist($event)"
+      (mouseenter)="handlingButtonMouseEnter($event)"
+      (mouseleave)="handlingButtonMouseLeave($event)">
+      <mat-icon [fontIcon]="isInWatchlist | watchlistIconName: isOnHover"></mat-icon>
+      <span>Watchlist</span>
     </button>
   </mat-card-footer>
 </mat-card>
