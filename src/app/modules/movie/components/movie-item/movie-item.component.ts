@@ -18,15 +18,6 @@ export class MovieItemComponent {
     private router: Router
   ) { }
 
-  bookmarkState(): string {
-    //TODO: add bookmark_added and bookmark_remove on hover
-    if (this.isInWatchlist) {
-      return 'bookmark_added';
-    }
-
-    return 'bookmark';
-  }
-
   movieThumbnailAltText(): string {
     if (!this.movie.title) return 'Movie thumbnail';
 

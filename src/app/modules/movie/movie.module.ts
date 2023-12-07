@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
+import { MatChipsModule } from '@angular/material/chips';
 
 import { MovieRoutingModule } from './movie-routing.module';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
@@ -25,6 +26,7 @@ import { WatchlistIconNamePipe } from './pipes/watchlist-icon-name.pipe';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatChipsModule,
     MovieRoutingModule
   ]
 })
