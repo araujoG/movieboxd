@@ -1,9 +1,21 @@
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  width: 950px;
   column-gap: 25px;
   row-gap: 30px;
   margin: auto;
 
-  width: 950px;
+  @media screen {
+    @media (min-width: 768px) and (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: 625px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      width: 300px;
+    }
+  }
+
 }
