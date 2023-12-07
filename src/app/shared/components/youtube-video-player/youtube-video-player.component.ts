@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-youtube-video-player',
@@ -11,7 +10,8 @@ export class YoutubeVideoPlayerComponent {
 
   @Input() set videoUrl (unsafeUrl: string){
     const splittedUrl = unsafeUrl.split('?v=');
+    const videoId = splittedUrl.at(-1) || '';
 
-    this.youtubeEmbedUrl = splittedUrl.at(-1) || '';
+    this.youtubeEmbedUrl = 'https://www.youtube.com/embed/' + videoId;
   }
 }

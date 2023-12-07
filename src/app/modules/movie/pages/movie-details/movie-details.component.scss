@@ -4,21 +4,52 @@ img {
 
 .main-row {
   display: flex;
-  column-gap: 25px;
+  column-gap: 24px;
+  row-gap: 16px;
+  margin-bottom: 16px;
 
   @media (max-width: 768px) {
     flex-direction: column;
   }
-}
 
-.movie-details {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
+  .movie-image {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
 
-  .title {
-    font-weight: 500;
-    font-size: 1.25rem;
-    color: var(my-primary);
+  .movie-details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    .title {
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+
+    .released-date {
+      color: rgba(0, 0, 0, 0.54);
+      margin-bottom: 8px;
+    }
+
+    .more-infos {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: auto;
+
+      .movie-duration {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .icon {
+          scale: 0.9;
+          color: rgba(0, 0, 0, 0.54);
+        }
+      }
+    }
   }
 }

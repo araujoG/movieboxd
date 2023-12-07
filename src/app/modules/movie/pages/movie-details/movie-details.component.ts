@@ -10,6 +10,7 @@ import { Movie } from '@interfaces/movie';
 export class MovieDetailsComponent implements OnInit{
 
   movie!: Movie;
+  showTrailer = false;
 
   constructor(
     private route : ActivatedRoute
@@ -17,5 +18,9 @@ export class MovieDetailsComponent implements OnInit{
 
   ngOnInit() {
     this.movie = this.route.snapshot.data['movie'];
+  }
+
+  toggleTrailer() {
+    this.showTrailer = !this.showTrailer;
   }
 }

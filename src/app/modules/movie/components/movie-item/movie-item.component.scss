@@ -46,18 +46,5 @@ mat-card {
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-
-    .movie-rating {
-      color: var(--mat-card-subtitle-text-color);
-      font-weight: 500;
-
-      &::before {
-        content: '⭐';
-      }
-
-      &::after {
-        content: '/10';
-      }
-    }
   }
 }

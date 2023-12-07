@@ -1,15 +1,25 @@
 <div class="main-row">
-  <div class="movie-details">
+  <div class="movie-image">
     <img [src]="'/assets/img/' + movie.thumbnail">
-    <button mat-raised-button color="accent">
+    <button mat-raised-button color="accent" (click)="toggleTrailer()">
       <mat-icon fontIcon="live_tv"></mat-icon>
       <span>Trailer</span>
     </button>
   </div>
   <div class="movie-details">
     <div class="title">{{ movie.title }}</div>
+    <div class="released-date">
+      <span>Released at </span>
+      {{ movie.releasedDate | date: 'longDate' }}
+    </div>
     <div>{{ movie.description }}</div>
-    <div>{{ movie.title }}</div>
+    <div class="more-infos">
+      <div class="movie-duration">
+        <mat-icon class="icon">timer</mat-icon>
+        {{ movie.duration | hourWithMinutes }}
+      </div>
+      <div class="movie-rating">{{ movie.rating }}</div>
+    </div>
   </div>
 </div>
-<app-youtube-video-player [videoUrl]="movie.trailerLink"></app-youtube-video-player>
+<app-youtube-video-player *ngIf="showTrailer" [videoUrl]="movie.trailerLink"></app-youtube-video-player>

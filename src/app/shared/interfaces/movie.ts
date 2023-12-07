@@ -3,7 +3,7 @@ export interface Movie {
   title : string;
   description : number;
   rating : number;
-  duration : string;
+  duration : number;
   genres : string[];
   releasedDate : string;
   trailerLink : string;
