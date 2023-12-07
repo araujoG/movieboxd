@@ -10,7 +10,8 @@
         "Sci-Fi"
       ],
       "releasedDate": "3 September 2020",
-      "trailerLink": "https://www.youtube.com/watch?v=LdOM0x0XDMo"
+      "trailerLink": "https://www.youtube.com/watch?v=LdOM0x0XDMo",
+      "thumbnail": "tenet.png"
     },
     {
       "title": "Spider-Man: Into the Spider-Verse",
@@ -23,7 +24,8 @@
         "Adventure"
       ],
       "releasedDate": "14 December 2018",
-      "trailerLink": "https://www.youtube.com/watch?v=tg52up16eq0"
+      "trailerLink": "https://www.youtube.com/watch?v=tg52up16eq0",
+      "thumbnail": "spiderMan.png"
     },
     {
       "title": "Knives Out",
@@ -36,7 +38,8 @@
         "Drama"
       ],
       "releasedDate": "27 November 2019",
-      "trailerLink": "https://www.youtube.com/watch?v=qGqiHJTsRkQ"
+      "trailerLink": "https://www.youtube.com/watch?v=qGqiHJTsRkQ",
+      "thumbnail": "knivesOut.png"
     },
     {
       "title": "Guardians of the Galaxy",
@@ -49,7 +52,8 @@
         "Comedy"
       ],
       "releasedDate": "1 August 2014",
-      "trailerLink": "https://www.youtube.com/watch?v=d96cjJhvlMA"
+      "trailerLink": "https://www.youtube.com/watch?v=d96cjJhvlMA",
+      "thumbnail": "guardiansOfTheGalaxy.png"
     },
     {
       "title": "Avengers: Age of Ultron",
@@ -62,7 +66,8 @@
         "Sci-Fi"
       ],
       "releasedDate": "1 May 2015",
-      "trailerLink": "https://www.youtube.com/watch?v=tmeOjFno6Do"
+      "trailerLink": "https://www.youtube.com/watch?v=tmeOjFno6Do",
+      "thumbnail": "avengers.png"
     }
   ]
 }

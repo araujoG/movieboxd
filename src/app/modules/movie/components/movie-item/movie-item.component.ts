@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Movie } from '@interfaces/movie';
 
 @Component({
   selector: 'app-movie-item',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class MovieItemComponent {
 
+  @Input() movie! : Movie;
+
+
+  bookmarkState(): string {
+    //TODO: add bookmark_added and bookmark_remove on hover
+    return 'bookmark';
+  }
 }

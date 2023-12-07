@@ -1,2 +1,4 @@
 <p>movie-list works!</p>
-<app-movie-item></app-movie-item>
+<div class="container">
+  <app-movie-item *ngFor="let movie of movies$ | async" [movie]="movie"></app-movie-item>
+</div>

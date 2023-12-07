@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent {
+  movies$ = this.movieService.getAllMovies();
+
+  constructor(
+    private movieService : MovieService,
+  ) { }
 
 }

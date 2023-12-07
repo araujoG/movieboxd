@@ -1,1 +1,23 @@
-<mat-card></mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="card-title">{{ movie.title }}</mat-card-title>
+    <mat-card-subtitle>
+      <span *ngFor="let genre of movie.genre">{{genre}}</span>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="'/assets/img/'+movie.thumbnail" alt="Movie thumbnail">
+  <mat-card-content>
+    <p>
+      {{ movie.description }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-footer [dir]="'ltr'">
+    <span class="movie-rating">{{movie.rating}}</span>
+
+    <button mat-raised-button color="primary">
+      <mat-icon [fontIcon]="bookmarkState()"></mat-icon>
+      <span>Add to watchlist</span>
+    </button>
+  </mat-card-footer>
+</mat-card>
