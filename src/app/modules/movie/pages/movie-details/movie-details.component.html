@@ -1,6 +1,15 @@
-<img [src]="'/assets/img/' + movie.thumbnail">
-<div class="movie-details">
-  <div class="title">{{ movie.title }}</div>
-  <div>{{ movie.description }}</div>
-  <div>{{ movie.title }}</div>
+<div class="main-row">
+  <div class="movie-details">
+    <img [src]="'/assets/img/' + movie.thumbnail">
+    <button mat-raised-button color="accent">
+      <mat-icon fontIcon="live_tv"></mat-icon>
+      <span>Trailer</span>
+    </button>
+  </div>
+  <div class="movie-details">
+    <div class="title">{{ movie.title }}</div>
+    <div>{{ movie.description }}</div>
+    <div>{{ movie.title }}</div>
+  </div>
 </div>
+<app-youtube-video-player [videoUrl]="movie.trailerLink"></app-youtube-video-player>
