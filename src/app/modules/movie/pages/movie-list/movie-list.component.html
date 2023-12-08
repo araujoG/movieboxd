@@ -1,5 +1,23 @@
-<div class="container">
-  <app-movie-item *ngFor="let movie of movies$ | async"
+<div class="filters-row" [formGroup]="form">
+  <span class="label">Sort by:</span>
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="sorting_by">
+    <mat-button-toggle [value]="0">
+      <mat-icon>sort_by_alpha</mat-icon>
+      <span>Title</span>
+    </mat-button-toggle>
+    <mat-button-toggle [value]="1">
+      <mat-icon>schedule</mat-icon>
+      <span>Release date</span>
+    </mat-button-toggle>
+    <mat-button-toggle [value]="2">
+      <mat-icon>hotel_class</mat-icon>
+      <span>Rating</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<div class="grid">
+  <app-movie-item *ngFor="let movie of movies$ | async | sortMovies: form.getRawValue().sorting_by"
     [movie]="movie"
     [isInWatchlist]="isMovieInWatchlist(movie.id)"
     (toggleInWatchlist)="handleWatchlistMovieToggle($event)">

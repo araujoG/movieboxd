@@ -1,7 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { WatchlistService } from '../../services/watchlist.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, map, switchMap, takeUntil } from 'rxjs';
+import { FormControl, FormGroup } from '@angular/forms';
+import { SortingOptions } from '../../enums/sorting-options';
+import { Movie } from '@interfaces/movie';
 
 @Component({
   selector: 'app-movie-list',
@@ -9,9 +12,13 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit, OnDestroy {
-  movies$ = this.movieService.getAllMovies();
+  movies$! : Observable<Movie[]>;
   currentWatchList : string[] = [];
   ngUnsubscribe = new Subject<void>();
+
+  form = new FormGroup({
+    sorting_by: new FormControl<SortingOptions>(SortingOptions.TITLE)
+  })
 
   constructor(
     private movieService : MovieService,
@@ -25,6 +32,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.addWatchlistChangeListener();
+    this.movies$ = this.movieService.getAllMovies();
   }
 
   addWatchlistChangeListener() : void {
