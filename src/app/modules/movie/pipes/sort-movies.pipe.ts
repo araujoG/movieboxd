@@ -21,23 +21,24 @@ export class SortMoviesPipe implements PipeTransform {
     });
   }
 
-  sortingByRating(movieA: Movie, movieB: Movie) : number {
-    console.log(movieA.rating, movieB.rating);
-
+  sortingByRating(movieA: Movie, movieB: Movie): number {
     if (movieA.rating < movieB.rating) return 1;
-    if (movieA.rating > movieB.rating) return -1;
+    if (movieA.rating > movieB.rating) return 1;
+
     return 0
   }
 
-  sortingByTitle(movieA: Movie, movieB: Movie) : number {
+  sortingByTitle(movieA: Movie, movieB: Movie): number {
     if (movieA.title < movieB.title) return -1;
     if (movieA.title > movieB.title) return 1;
+
     return 0
   }
 
-  sortingByReleaseDate(movieA: Movie, movieB: Movie) : number {
+  sortingByReleaseDate(movieA: Movie, movieB: Movie): number {
     if (movieA.releasedDate < movieB.releasedDate) return -1;
     if (movieA.releasedDate > movieB.releasedDate) return 1;
+
     return 0
   }
 

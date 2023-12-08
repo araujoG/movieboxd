@@ -34,10 +34,6 @@ export class MovieItemComponent {
     this.toggleInWatchlist.next(this.movie.id);
   }
 
-  log(t : string) {
-    console.log(t)
-  }
-
   handlingButtonMouseEnter(event: any) {
     this.isOnHover = true;
   }
